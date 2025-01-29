@@ -1,9 +1,9 @@
-package livros.biblioteca.api.livros;
+package livros.biblioteca.api.domain.livros;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import livros.biblioteca.api.autor.Autor;
-import livros.biblioteca.api.autor.DadosAutor;
+import livros.biblioteca.api.domain.autor.Autor;
+import livros.biblioteca.api.leitor.DadosCadastroLeitor;
 import lombok.*;
 
 
@@ -61,4 +61,6 @@ public class Livro{
     public void excluirLivroos() {
         this.ativo = false;
     }
+
+
 }

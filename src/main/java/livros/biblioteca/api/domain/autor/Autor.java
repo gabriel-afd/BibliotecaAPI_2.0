@@ -1,4 +1,4 @@
-package livros.biblioteca.api.autor;
+package livros.biblioteca.api.domain.autor;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,6 @@
-package livros.biblioteca.api.livros;
+package livros.biblioteca.api.domain.livros;
 
-import livros.biblioteca.api.autor.Autor;
-import livros.biblioteca.api.autor.DadosAutor;
+import livros.biblioteca.api.domain.autor.DadosAutor;
 
 public record LivroAtualizarDTO(
 

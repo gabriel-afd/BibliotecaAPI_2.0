@@ -1,4 +1,4 @@
-package livros.biblioteca.api.livros;
+package livros.biblioteca.api.domain.livros;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Embeddable;

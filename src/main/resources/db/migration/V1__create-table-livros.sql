@@ -6,6 +6,6 @@ CREATE TABLE livros (
     isbn VARCHAR(255) DEFAULT NULL,
     year INT DEFAULT NULL,
     location VARCHAR(255) DEFAULT NULL,
-    category TINYINT DEFAULT NULL,
+    category VARCHAR(255) DEFAULT NULL,
     language VARCHAR(255) DEFAULT NULL
 );
