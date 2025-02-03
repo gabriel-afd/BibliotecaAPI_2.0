@@ -1,6 +1,6 @@
 # 📚 BibliotecaAPI 2.0
 
-Bem-vindo ao repositório da **BibliotecaAPI 2.0**! Este projeto é uma API robusta para gerenciamento de bibliotecas, desenvolvida com as melhores práticas e tecnologias modernas para garantir eficiência, segurança e escalabilidade.
+Bem-vindo ao repositório da **BibliotecaAPI 2.0**! Este projeto é uma API robusta para gerenciamento de bibliotecas, desenvolvida com as melhores práticas e tecnologias modernas para garantir eficiência, segurança e escalabilidade. Ela permite operações básicas de CRUD (Create, Read, Update, Delete) para livros, autores e usuários, além de funcionalidades como empréstimo e devolução de livros.
 
 ---
 
@@ -33,6 +33,18 @@ Aqui estão as principais tecnologias utilizadas neste projeto, organizadas por 
 ![Springdoc OpenAPI](https://img.shields.io/badge/Springdoc-6DB33F?style=for-the-badge&logo=openapi-initiative&logoColor=white)
 
 ---
+---
+
+## Estrutura do Projeto 📂
+
+A aplicação segue a arquitetura MVC (Model-View-Controller), organizada da seguinte forma:
+
+- **Model**: Contém as entidades principais como Médico, Paciente e Consulta, representando as tabelas do banco de dados.
+- **Repository**: Interfaces que estendem o JpaRepository, fornecendo métodos para operações CRUD nas entidades.
+- **Service**: Camada responsável pela lógica de negócios, intermediando as operações entre o Controller e o Repository.
+- **Controller**: Gerencia as requisições HTTP, direcionando-as para os serviços apropriados e retornando as respostas adequadas.
+
+---
 
 ## 🎯 Princípios Utilizados
 
@@ -63,6 +75,30 @@ A **BibliotecaAPI 2.0** foi desenvolvida com um forte enfoque em testes e valida
 - **Testes Unitários**: Utilizando JUnit e Mockito, cobrimos as unidades individuais da aplicação para assegurar que cada parte funcione isoladamente.
 - **Testes de Integração**: Com o Spring Test, realizamos testes que abrangem múltiplos componentes, garantindo que eles funcionem harmoniosamente.
 - **Validações**: Implementamos validações rigorosas com Bean Validation para assegurar a integridade dos dados recebidos e processados pela API.
+
+---
+---
+
+## 📌 Principais Endpoints
+
+### 📚 Livros
+- `GET /livros` - Lista todos os livros
+- `POST /livros` - Cadastra um novo livro
+- `GET /livros/{id}` - Busca um livro por ID
+- `PUT /livros/{id}` - Atualiza um livro
+- `DELETE /livros/{id}` - Remove um livro
+
+### 👤 Usuários
+- `POST /login` - Autenticação de usuários
+
+### 📖 Reservas
+- `POST /reserva` - Realiza um empréstimo
+
+### 👥 Leitores
+- `GET /leitor` - Lista todos os leitores
+- `POST /leitor` - Cadastra um novo leitor
+- `PUT /leitor/{id}` - Atualiza os dados de um leitor
+- `DELETE /leitor/{id}` - Remove um leitor
 
 ---
 
