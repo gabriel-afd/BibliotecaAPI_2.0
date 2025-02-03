@@ -37,47 +37,46 @@ Aqui estão as principais tecnologias utilizadas neste projeto, organizadas por 
 ##  Diagrama Entidade Relacionamento (ER)
 ---
     erDiagram
-    Livro ||--o{ ReservaLivro : ""
-    Livro }o--|| Categoria: ""
-    ReservaLivro }o--|| Usuario: ""
-    ReservaLivro }o--|| Leitor: ""
+Livro ||--o{ ReservaLivro : ""
+Livro }o--|| Categoria: ""
+ReservaLivro }o--|| Usuario: ""
+ReservaLivro }o--|| Leitor: ""
 
-    Livro {
-        Long id PK
-        String title
-        String isbn
-        String language
-        String autor
-        LocalDateTime publication
-        String category
-        Boolean ativo
-    }
+Livro {
+    Long id PK
+    String title
+    String isbn
+    String language
+    String autor
+    LocalDateTime publication
+    String category
+    Boolean ativo
+}
 
-    ReservaLivro {
-        Long id PK
-        Long livro_id FK
-        Long leitor_id FK
-        LocalDateTime data
-        Integer qtdDias
-    }
+ReservaLivro {
+    Long id PK
+    Long livro_id FK
+    Long leitor_id FK
+    LocalDateTime data
+    Integer qtdDias
+}
 
-    Usuario {
-        Long id PK
-        String login
-        String senha
-    }
+Usuario {
+    Long id PK
+    String login
+    String senha
+}
 
-    Leitor {
-        Long id PK
-        String nome
-        String email
-    }
+Leitor {
+    Long id PK
+    String nome
+    String email
+}
 
-    Categoria {
-        Long id PK
-        String nome
-    }
-
+Categoria {
+    Long id PK
+    String nome
+}
 ---
 
 ## 📂 Estrutura do Projeto
