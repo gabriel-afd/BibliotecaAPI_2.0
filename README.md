@@ -33,6 +33,51 @@ Aqui estão as principais tecnologias utilizadas neste projeto, organizadas por 
 ![Springdoc OpenAPI](https://img.shields.io/badge/Springdoc-6DB33F?style=for-the-badge&logo=openapi-initiative&logoColor=white)
 
 ---
+---
+##  Diagrama Entidade Relacionamento (ER)
+
+    Livro ||--o{ ReservaLivro : ""
+    Livro }o--|| Categoria: ""
+    ReservaLivro }o--|| Usuario: ""
+    ReservaLivro }o--|| Leitor: ""
+    
+    Livro {
+        Long id PK
+        String title
+        String isbn
+        String language
+        String autor
+        LocalDateTime publication
+        String category
+        Boolean ativo
+    }
+    
+    ReservaLivro {
+        Long id PK
+        Long livro_id FK
+        Long leitor_id FK
+        LocalDateTime data
+        Integer qtdDias
+    }
+    
+    Usuario {
+        Long id PK
+        String login
+        String senha
+    }
+    
+    Leitor {
+        Long id PK
+        String nome
+        String email
+    }
+    
+    Categoria {
+        Long id PK
+        String nome
+    }
+
+---
 
 ## 📂 Estrutura do Projeto
 
