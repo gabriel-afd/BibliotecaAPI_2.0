@@ -33,7 +33,6 @@ Aqui estão as principais tecnologias utilizadas neste projeto, organizadas por 
 ![Springdoc OpenAPI](https://img.shields.io/badge/Springdoc-6DB33F?style=for-the-badge&logo=openapi-initiative&logoColor=white)
 
 ---
----
 
 ## 📂 Estrutura do Projeto
 
@@ -66,7 +65,6 @@ A **BibliotecaAPI 2.0** foi desenvolvida seguindo os **princípios SOLID**, gara
 - **Empréstimos**: Funcionalidades para gerenciar empréstimos de livros, incluindo datas de devolução e renovações.
 - **Notificações**: Sistema de notificações para alertar usuários sobre prazos de devolução e reservas disponíveis.
 
----
 ---
 # Validações de Reserva de Livro
 
@@ -119,7 +117,6 @@ A **BibliotecaAPI 2.0** foi desenvolvida com um forte enfoque em testes e valida
 - **Testes Unitários**: Utilizando JUnit e Mockito, cobrimos as unidades individuais da aplicação para assegurar que cada parte funcione isoladamente.
 - **Testes de Integração**: Com o Spring Test, realizamos testes que abrangem múltiplos componentes, garantindo que eles funcionem harmoniosamente.
 
----
 ---
 
 ## 📌 Principais Endpoints
