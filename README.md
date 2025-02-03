@@ -35,7 +35,7 @@ Aqui estão as principais tecnologias utilizadas neste projeto, organizadas por 
 ---
 ---
 ##  Diagrama Entidade Relacionamento (ER)
-
+---
     erDiagram
     Livro ||--o{ ReservaLivro : ""
     Livro }o--|| Categoria: ""
