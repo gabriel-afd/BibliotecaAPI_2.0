@@ -67,14 +67,57 @@ A **BibliotecaAPI 2.0** foi desenvolvida seguindo os **princípios SOLID**, gara
 - **Notificações**: Sistema de notificações para alertar usuários sobre prazos de devolução e reservas disponíveis.
 
 ---
+---
+# Validações de Reserva de Livro
 
-## 🧪 Testes e Validações
+Este projeto contém diversas validações para garantir que as reservas de livros na biblioteca sigam as regras estabelecidas. As validações cobrem horários de funcionamento, limitações de dias de reserva, controle de livros disponíveis, e quantidades máximas de reservas por usuário.
+
+## Validações Implementadas
+
+### 1. **ValidacaoHorarioFuncionamentoBiblioteca 🕒**
+Esta validação assegura que a reserva de um livro seja feita dentro do horário de funcionamento da biblioteca. As seguintes condições são verificadas:
+- **Reservas no domingo**: Não são permitidas.
+- **Antes das 8:00**: Reservas feitas antes do horário de abertura da biblioteca.
+- **Durante o horário de almoço**: Reservas feitas entre 12:00 e 14:00, período em que a biblioteca está fechada para o almoço.
+- **Após as 18:00**: Reservas feitas após o horário de fechamento da biblioteca.
+
+Caso qualquer uma dessas condições seja atendida, a validação lança uma exceção com a mensagem: 
+> "Biblioteca fora do horário de funcionamento".
+
+### 2. **ValidacaoReservaMaximo7Dias 📅**
+Essa validação garante que a data da reserva esteja dentro do intervalo permitido de 7 dias a partir da data atual. As condições verificadas são:
+- **Data no passado**: Se a data de reserva for anterior à data atual, a validação lança uma exceção com a mensagem: 
+  > "A data de reserva não pode ser no passado".
+- **Reserva maior que 7 dias**: Se a reserva for realizada com mais de 7 dias de antecedência, a validação lança uma exceção com a mensagem: 
+  > "A reserva do livro pode ser feita por, no máximo, 7 dias".
+
+### 3. **ValidadorLivroAtivo 📚**
+Essa validação verifica se o livro selecionado está **ativo** no catálogo da biblioteca. Caso o livro não esteja mais disponível para reserva, a validação lança uma exceção com a mensagem: 
+> "O livro que você selecionou não está mais disponível no catálogo".
+
+### 4. **ValidadorMaximoLivrosPorPessoa 🧑‍🤝‍🧑**
+Essa validação impõe um limite na quantidade de livros que um usuário pode reservar ao mesmo tempo. As regras de controle são:
+- **Limitação de livros por usuário**: O usuário não pode reservar mais de 2 livros ao mesmo tempo se a data da reserva estiver a menos de 4 dias da data atual.
+
+Caso o usuário ultrapasse o limite, a validação lança uma exceção com a mensagem: 
+> "Você não pode reservar mais de 2 livros".
+
+### 5. **ValidadorReservaIndisponivel 🚫**
+Essa validação assegura que um livro não possa ser reservado mais de uma vez para a mesma data. Se o livro já tiver uma reserva para a data desejada, a validação lança uma exceção com a mensagem: 
+> "Livro já reservado!".
+
+Essas validações são cruciais para garantir o bom funcionamento do processo de reserva de livros na biblioteca. Elas asseguram que as reservas estejam dentro dos horários de funcionamento, que os livros disponíveis sejam reservados corretamente e que os usuários cumpram as regras de quantidade de reservas.
+
+As exceções geradas por essas validações ajudam a fornecer mensagens claras e amigáveis para os usuários, tornando o sistema mais eficiente e fácil de usar.
+
+---
+
+## 🧪 Testes
 
 A **BibliotecaAPI 2.0** foi desenvolvida com um forte enfoque em testes e validações para garantir sua robustez:
 
 - **Testes Unitários**: Utilizando JUnit e Mockito, cobrimos as unidades individuais da aplicação para assegurar que cada parte funcione isoladamente.
 - **Testes de Integração**: Com o Spring Test, realizamos testes que abrangem múltiplos componentes, garantindo que eles funcionem harmoniosamente.
-- **Validações**: Implementamos validações rigorosas com Bean Validation para assegurar a integridade dos dados recebidos e processados pela API.
 
 ---
 ---
