@@ -36,11 +36,12 @@ Aqui estão as principais tecnologias utilizadas neste projeto, organizadas por 
 ---
 ##  Diagrama Entidade Relacionamento (ER)
 
+    erDiagram
     Livro ||--o{ ReservaLivro : ""
     Livro }o--|| Categoria: ""
     ReservaLivro }o--|| Usuario: ""
     ReservaLivro }o--|| Leitor: ""
-    
+
     Livro {
         Long id PK
         String title
@@ -51,7 +52,7 @@ Aqui estão as principais tecnologias utilizadas neste projeto, organizadas por 
         String category
         Boolean ativo
     }
-    
+
     ReservaLivro {
         Long id PK
         Long livro_id FK
@@ -59,19 +60,19 @@ Aqui estão as principais tecnologias utilizadas neste projeto, organizadas por 
         LocalDateTime data
         Integer qtdDias
     }
-    
+
     Usuario {
         Long id PK
         String login
         String senha
     }
-    
+
     Leitor {
         Long id PK
         String nome
         String email
     }
-    
+
     Categoria {
         Long id PK
         String nome
