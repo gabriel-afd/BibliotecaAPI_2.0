@@ -35,7 +35,7 @@ Aqui estão as principais tecnologias utilizadas neste projeto, organizadas por 
 ---
 ---
 
-## Estrutura do Projeto 📂
+## 📂 Estrutura do Projeto
 
 A aplicação segue a arquitetura MVC (Model-View-Controller), organizada da seguinte forma:
 
