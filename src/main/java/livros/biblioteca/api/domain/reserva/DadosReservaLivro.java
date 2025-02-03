@@ -1,5 +1,6 @@
 package livros.biblioteca.api.domain.reserva;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -14,16 +15,15 @@ public record DadosReservaLivro(
         Long idLivro,
         @NotNull
         Long idLeitor,
-        @NotBlank
-        String title,
         @NotNull
         @Future
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm[:ss]")
         LocalDateTime data,
         Long qtdDias,
         Categoria category
 
 ) {
         public DadosReservaLivro(ReservaLivro reserva) {
-                this(reserva.getId(), reserva.getLivro().getId(), reserva.getLeitor().getId(),reserva.getLivro().getTitle(),reserva.getData(),reserva.getQtdDias(),reserva.getLivro().getCategory());
+                this(reserva.getId(), reserva.getLivro().getId(), reserva.getLeitor().getId(),reserva.getData(),reserva.getQtdDias(),reserva.getLivro().getCategory());
         }
 }

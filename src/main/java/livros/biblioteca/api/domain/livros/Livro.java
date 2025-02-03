@@ -10,6 +10,7 @@ import lombok.*;
 @Table(name = "livros")
 @Entity(name = "Livro")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor //Gera um construtor que recebe como parametro todos os atributos da classe
 @EqualsAndHashCode(of = "id") //A comparação de igualdade entre dois objetos Livro deve ser feita somente pelo id

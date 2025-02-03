@@ -18,7 +18,6 @@ import java.time.LocalDateTime;
 @Entity(name = "ReservaLivro")
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(of="id")
 public class ReservaLivro {
 
@@ -38,6 +37,11 @@ public class ReservaLivro {
 
     private Long qtdDias;
 
-
-
+    public ReservaLivro(Long id, Livro livro, Leitor leitor, LocalDateTime data, Long qtdDias){
+        this.id = id;
+        this.livro = livro;
+        this.leitor = leitor;
+        this.data = data;
+        this.qtdDias = qtdDias;
+    }
 }
